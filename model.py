@@ -12,7 +12,7 @@ class SentimentClassifier(nn.Module):
         self.bert_model = BertModel(config)
 
         self.dropout = nn.Dropout(config.hidden_dropout_prob)
-        self.classifier = nn.Linear(config.hidden_size, config.config.num_labels)
+        self.classifier = nn.Linear(config.hidden_size, config.num_labels)
 
     def forward(self,
                 input_ids: Tensor,
